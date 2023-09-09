@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện theo dõi vườn cà chua</title>
+
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!--Custom css file link-->
+    <link rel="stylesheet" href="runs/style.css">
+</head>
+<body>
+<!--header section starts-->
+    <header>
+        <a href="#" class="logo"><i class ="fas fa-graduation-cap"></i>ĐỒ ÁN TỐT NGHIỆP CƠ ĐIỆN TỬ</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+<!--                <li><a href="#course">Course</a></li>-->
+                <li><a href="#contact">Liên Hệ</a></li>
+                <li><a href="#review">Lượt Truy Cập</a></li>
+                <li><a href="{{ url_for('logout') }}">Đăng xuất</a></li>
+            </ul>
+        </nav>
+
+        <div class="fas fa-bars"></div>
+
+    </header>
+<!--header section ends-->
+
+<!--home section starts-->
+    <section class="home" id="home">
+        <div class="content">
+            <h1>Your Tomato Garden</h1>
+            <p>Đừng bỏ lỡ bất kì dấu hiệu nào! Theo dõi vườn cà chua của bạn để biết thời điểm sắp thu hoạch và được thông báo kịp thời các dấu hiệu sâu bệnh</p>
+            <a href="#"><button> Discover More</button></a>
+        </div>
+
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-binoculars" onclick="location.href='/get'"></i>
+                <h3>Quan sát</h3>
+                <p>Xem kết quả thu được tại từng vị trí cây cà chua</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-exchange-alt" onclick="location.href='/upload'"></i>
+                <h3>Quá trình gửi ảnh</h3>
+                <p>Theo dõi trạng thái ảnh được gửi từ robot</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-file-video"></i>
+                <h3>Video</h3>
+                <p>Xem một số video được ghi bởi robot</p>
+            </div>
+        </div>
+    </section>
+<!--home section ends-->
+
+<!--about section starts-->
+    <section class="about" id="about">
+        <h1 class="heading"> Giới thiệu </h1>
+        <h3 class="title"> Về Đồ Án Tốt Nghiệp</h3>
+        <div class="row">
+            <div class="content">
+                <h3>đồ án tốt nghiệp cơ điện tử - ME4327</h3>
+                <h4>Trường Đại học Bách Khoa TP.HCM - Khoa Cơ Khí - Bộ Môn Cơ Điện Tử</h4>
+                <h5>Thiết Kế Robot Di Động Theo Dõi Cây Cà Chua Trong Nhà Kính</h5>
+                <h5>Sinh viên thực hiện: Nguyễn Trần Phương Nam, MSSV: 1914243, CK19CD03</h5>
+                <h5>Giảng viên hướng dẫn: TS. Phùng Trí Công</h5>
+                <p> Mục tiêu chính của đề tài là phát triển một hệ thống tự động hóa quy trình giám sát và phân tích tình trạng cây cà chua trong luống trồng. Cảm biến siêu âm được sử dụng để theo dõi khoảng cách và vị trí của robot so với luống trồng, giúp robot di chuyển một cách chính xác và tránh va chạm. Khi robot phát hiện vị trí của cây cà chua, nó sẽ dừng lại và thực hiện quá trình chụp ảnh.</p>
+                <p> Quá trình chụp ảnh này rất quan trọng để thu thập dữ liệu hình ảnh về cây cà chua, từ đó phân tích tình trạng của cây như số lượng trái chín, mức độ bị nhiễm bệnh hay không. Các dữ liệu này sẽ được xử lý thông qua các thuật toán phân tích ảnh và máy học để đưa ra kết quả chính xác về tình trạng cây cà chua.</p>
+                <a href="#"><button>learn more</button></a>
+            </div>
+
+            <div class="image">
+                <img src="runs/capstone.jpg" alt="">
+            </div>
+        </div>
+    </section>
+<!--about section ends-->
+
+<!--contact section starts-->
+    <section class="contact" id="contact">
+        <h1 class="heading">Liên hệ</h1>
+        <h3 class="title">Trao đổi về các trải nghiệm không hài lòng của bạn</h3>
+
+        <div class="row">
+            <div class="image">
+                <img src="runs/contact1.jpg" alt="">
+            </div>
+
+            <div class="form-container">
+                <form action="">
+                    <input type="text" placeholder="full name">
+                    <input type="email" placeholder="enter your email">
+                    <input type="number" placeholder="phone">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
+                    <input type="submit" value="message">
+                </form>
+            </div>
+        </div>
+    </section>
+<!--contact section ends-->
+
+    <!--jquery cdn link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"> </script>
+
+    <!--custom js file link-->
+    <script src="runs/main.js"></script>
+</body>
+</html>

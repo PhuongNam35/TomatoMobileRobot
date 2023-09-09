@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hình ảnh từng vị trí cây cà chua</title>
+    <style>
+        img {
+            width: 50%; /* Giảm kích thước ảnh xuống 1/2 */
+            height: auto; /* Đảm bảo tỷ lệ khung hình không bị biến đổi */
+        }
+
+        .green-text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách ảnh</h1>
+    <button class="btn" onclick="location.href='/get/Detail'">Xem kết quả </button><br>
+    <br>
+    <br>
+    <ul>
+        {% for image_result in image_results %}
+            <li>
+                <img src="{{ image_result[0] }}" alt="Vị trí {{ loop.index }}">
+                <p class="green-text">ảnh vị trí {{ loop.index }}</p>
+                <p>Cây có: {{image_result[1]}} quả chín</p>
+                <p>Cây có: {{image_result[2]}} quả chưa chín</p>
+                <p>Cây có: {{image_result[3]}} lá có dấu hiệu bệnh úa lá muộn</p>
+                <p>Cây có: {{image_result[4]}} lá có dấu hiệu bệnh bạc lá sớm</p>
+            </li>
+        {% endfor %}
+<!--        {% for image_path in image_paths %}-->
+<!--            <li>-->
+<!--                <img src="{{ image_path }}" alt="ảnh vị trí {{ loop.index }}">-->
+<!--                <p class="green-text">ảnh vị trí {{ loop.index }}</p>-->
+<!--                <p>Cây có: {{cnt_cl0}} quả chín</p>-->
+<!--                <p>Cây có: {{cnt_cl1}} quả chưa chín</p>-->
+<!--                <p>Cây có: {{cnt_cl2}} lá có dấu hiệu bệnh úa lá muộn</p>-->
+<!--                <p>Cây có: {{cnt_cl3}} lá có dấu hiệu bệnh bạc lá sớm</p>-->
+<!--            </li>-->
+<!--        {% endfor %}-->
+    </ul>
+</body>
+</html>

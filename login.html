@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .login-container {
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    .login-result {
+        margin-top: 20px;
+    }
+
+    .success-message {
+        color: green;
+        font-weight: bold;
+    }
+
+    .success-icon {
+        color: green;
+        margin-left: 5px;
+    }
+    .error-message {
+        color: red;
+        font-weight: bold;
+    }
+
+    .error-icon {
+        color: red;
+        margin-left: 5px;
+    }
+
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Tên đăng nhập">
+            <input type="password" name="password" placeholder="Mật khẩu">
+            <input type="submit" value="Đăng nhập" onclick="return validateForm();">
+        </form>
+    </div>
+
+    <div class="login-result" id="successMessage" style="display: none;">
+        <p class="success-message">Đăng nhập thành công <span class="success-icon">&#10004;</span></p>
+    </div>
+
+    <div class="login-result" id="errorMessage" style="display: none;"> <!-- Thêm phần hiển thị lỗi -->
+        <p class="error-message">Tên đăng nhập hoặc mật khẩu không đúng! <span class="error-icon">&#10008;</span></p>
+    </div>
+
+    <script>
+    function showSuccessMessage() {
+        var successMessage = document.getElementById("successMessage");
+        successMessage.style.display = "block";
+        setTimeout(function() {
+            window.location.href = "/";
+        }, 2000); // Chờ 2 giây trước khi chuyển hướng
+    }
+
+    function showErrorMessage() {
+        var errorMessage = document.getElementById("errorMessage");
+        errorMessage.style.display = "block";
+    }
+
+    function validateForm() {
+        var username = document.getElementsByName("username")[0].value;
+        var password = document.getElementsByName("password")[0].value;
+
+        if (username == "phuongnam" && password == "123") {
+            showSuccessMessage();
+        } else {
+            showErrorMessage();
+            return false; // Ngăn chặn việc submit form
+        }
+    }
+
+    </script>
+</body>
+</html>
